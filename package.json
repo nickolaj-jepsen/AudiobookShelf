@@ -4,8 +4,9 @@
   "description": "Generate RSS Feeds from audiobooks",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev --no-notify src/Server.ts",
+    "debug": "ts-node-dev --no-notify src/Server.ts",
     "build": "tsc",
+    "start": "node dist/Server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

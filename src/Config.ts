@@ -12,7 +12,7 @@ const DEFAULT_CONF: IConfig = {
     NODE_ENV : 'development', // should be either development or production
     PORT: 8888,
     AUDIOBOOK_PATH: path.join(__dirname, '..', 'audiobooks'),
-    HOST: 'http://insisto.serveo.net',
+    HOST: 'http://localhost:8888',
 };
 
 function readConf(): IConfig {

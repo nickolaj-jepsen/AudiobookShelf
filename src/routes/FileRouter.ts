@@ -1,4 +1,4 @@
-import { Request, Response, Router } from 'express';
+import {Request, Response, Router} from 'express';
 import {lookup} from 'mime-types';
 import {join} from 'path';
 import {config} from '../Config';

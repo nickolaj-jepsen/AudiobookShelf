@@ -2,6 +2,7 @@ import * as path from 'path';
 
 interface IConfig {
     [index: string]: any;
+
     NODE_ENV: string;
     PORT: number;
     AUDIOBOOK_PATH: string;
@@ -9,7 +10,7 @@ interface IConfig {
 }
 
 const DEFAULT_CONF: IConfig = {
-    NODE_ENV : 'development', // should be either development or production
+    NODE_ENV: 'development', // should be either development or production
     PORT: 8888,
     AUDIOBOOK_PATH: path.join(__dirname, '..', 'audiobooks'),
     HOST: 'http://localhost:8888',

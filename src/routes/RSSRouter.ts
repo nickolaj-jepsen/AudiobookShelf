@@ -1,7 +1,6 @@
-import { Request, Response, Router } from 'express';
-import {dirname, extname, join, sep} from 'path';
-import {Book, findBooks} from '../Book';
-import {config} from '../Config';
+import {Request, Response, Router} from 'express';
+import {join} from 'path';
+import {Book} from '../Book';
 
 const router: Router = Router();
 

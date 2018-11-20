@@ -16,10 +16,18 @@ function buildLogger() {
                     format: 'YYYY-MM-DD HH:mm:ss',
                 }),
                 format.align(),
-                format.printf((info) => `${info.timestamp} [${info.level}]: ${info.message}`),            ),
+                format.printf((info) => `${info.timestamp} [${info.level}]: ${info.message}`)),
         }));
     } else {
-        // todo prod logging
+        logBuilder.add(new transports.Console({
+            level: 'warn',
+            format: format.combine(
+                format.timestamp({
+                    format: 'YYYY-MM-DD HH:mm:ss',
+                }),
+                format.align(),
+                format.printf((info) => `${info.timestamp} [${info.level}]: ${info.message}`)),
+        }));
     }
 
     return logBuilder;

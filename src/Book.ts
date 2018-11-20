@@ -6,7 +6,6 @@ import {dirname, extname, join, sep} from 'path';
 import Podcast from 'podcast';
 import {promisify} from 'util';
 import {config} from './Config';
-import {lookup} from 'mime-types';
 
 const readdir = promisify(_readdir);
 const stat = promisify(_stat);

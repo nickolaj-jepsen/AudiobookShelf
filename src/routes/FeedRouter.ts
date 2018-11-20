@@ -1,7 +1,7 @@
 import {Request, Response, Router} from 'express';
 import {join} from 'path';
-import {Book, findBooks} from '../Book';
 import {config} from '../Config';
+import {Book, findBooks} from '../models/Book';
 
 const router: Router = Router();
 

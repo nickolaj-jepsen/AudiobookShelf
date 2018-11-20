@@ -1,6 +1,6 @@
 import {Request, Response, Router} from 'express';
 import {join} from 'path';
-import {Book} from '../Book';
+import {Book} from '../models/Book';
 
 const router: Router = Router();
 

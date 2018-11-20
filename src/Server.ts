@@ -22,7 +22,7 @@ app.use('/feed', FeedRouter);
 app.use('/files', FileRouter);
 app.use('/rss', RSSRouter);
 app.use('/image', ImageRouter);
-app.use('/browse', BrowseRouter);
+app.use('/', BrowseRouter);
 
 const port: number = Number(process.env.PORT) || config.PORT;
 app.listen(port, async () => {

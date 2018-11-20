@@ -1,0 +1,31 @@
+{
+  "name": "audiobookrss",
+  "version": "0.1.0",
+  "description": "Generate RSS Feeds from audiobooks",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node-dev --no-notify src/Server.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mime-types": "^2.1.21",
+    "moment": "^2.22.2",
+    "morgan": "^1.9.1",
+    "music-metadata": "^3.2.1",
+    "podcast": "latest",
+    "sharp": "^0.21.0",
+    "typescript": "^3.1.6",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "@types/mime-types": "^2.1.0",
+    "@types/morgan": "^1.7.35",
+    "@types/sharp": "^0.21.0",
+    "ts-node-dev": "^1.0.0-pre.30"
+  }
+}

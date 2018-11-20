@@ -77,7 +77,7 @@ export class Book {
             image_url: `${config.HOST}/image/${this.url}.jpg`,
             itunesImage: `${config.HOST}/image/${this.url}.jpg`,
             site_url: config.HOST,
-            itunesAuthor: 'Book writer', // TODO: Get the correct writer
+            itunesAuthor: (await this.getAuthor()) || 'unknown',
         });
 
         for (const episode of this.episodes) {
@@ -101,14 +101,26 @@ export class Book {
 
     public async getThumbnail() {
         const firstEpisode = this.episodes[0];
-        if (firstEpisode !== null) {
+        if (firstEpisode !== undefined) {
             const metadata = await parseFile(join(this.path, firstEpisode.title));
             const cover = metadata.common.picture;
             if (cover && cover[0]) {
                 return cover[0];
             }
         }
-        return null;
+        return undefined;
+    }
+
+    public async getAuthor() {
+        const firstEpisode = this.episodes[0];
+        if (firstEpisode !== undefined) {
+            const metadata = await parseFile(join(this.path, firstEpisode.title));
+            const artist = metadata.common.artist;
+            if (artist) {
+                return artist;
+            }
+        }
+        return undefined;
     }
 }
 

@@ -27,7 +27,7 @@ function readEnv(key: string, defaultValue: any): any {
     if (process.env[key] !== undefined) {
         return process.env[key]!.trim();
     }
-    if (defaultValue !== null) {
+    if (defaultValue !== undefined) {
         return defaultValue;
     }
     throw new Error(`expected ENV not set: ${key}`);

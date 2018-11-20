@@ -32,13 +32,6 @@ interface IEpisode {
     duration: number;
 }
 
-interface IBook {
-    name: string;
-    path: string;
-    episodes: IEpisode[];
-    startDate: Moment;
-}
-
 export class Book {
     public static async fromDirectory(relativePath: string): Promise<Book> {
         const path = join(config.AUDIOBOOK_PATH, relativePath);
@@ -56,7 +49,7 @@ export class Book {
 
                 episodes.push({
                     title: fileName,
-                    mimetype: lookup(filePath) || 'audio/mpeg',
+                    mimetype: FILE_TYPE[extname(filePath).substring(1)],
                     guid: encodeURI(fileName),
                     date: moment(currentDate),
                     size: file.size,

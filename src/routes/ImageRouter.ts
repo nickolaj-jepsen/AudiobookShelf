@@ -10,7 +10,7 @@ router.get('/*', async (req: Request, res: Response) => {
     const book = await Book.fromDirectory(join(...decodeURI(pathWithoutExt).split('/')));
     const thumbnail = await book.getThumbnail();
 
-    if (thumbnail === null) {
+    if (thumbnail === undefined) {
         return res.send('');
     }
 
